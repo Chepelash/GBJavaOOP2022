@@ -2,7 +2,9 @@ package ru.chepelash.gb2022.javaoop.homework1.componentTypes;
 
 public class Engine {
     private Boolean work;
-
+    public Engine(){
+        work = false;
+    }
     public void start () {
         this.work = true;
         System.out.println("Двигатель запущен");
