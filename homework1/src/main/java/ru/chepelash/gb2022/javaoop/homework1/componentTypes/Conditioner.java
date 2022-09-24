@@ -1,6 +1,6 @@
 package ru.chepelash.gb2022.javaoop.homework1.componentTypes;
 
-public abstract class Conditioner {
+public class Conditioner {
     private boolean isOn;
     public Conditioner(){
         isOn = false;
