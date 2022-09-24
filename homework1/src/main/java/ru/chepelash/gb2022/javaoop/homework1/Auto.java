@@ -25,24 +25,47 @@ public abstract class Auto {
         driving = false;
     }
 
-    public void startEngine(){
-        engine.start();
-    }
-    public void stopEngine(){
-        engine.stop();
-    }
+    public abstract void startEngine();
+    public abstract void stopEngine();
     public abstract boolean isEngineStarted();
-    public void startDriving(){
-        if(engine.getWork())
-            driving = true;
+    public abstract void startDriving();
+    public abstract void stopDriving();
+
+    public abstract void changeTransmission(int gear);
+    public abstract void openWindow(int doorIndex);
+    public abstract void closeWindow(int doorIndex);
+    public abstract void openDoor(int doorIndex);
+    public abstract void closeDoor(int doorIndex);
+
+    public List<Door> getDoors() {
+        return doors;
     }
-    public void stopDriving(){
-        driving = false;
+
+    public List<Wheel> getWheels() {
+        return wheels;
     }
-    public boolean isDriving(){
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public SteeringWheel getSteeringWheel() {
+        return steeringWheel;
+    }
+
+    public Transmission getTransmission() {
+        return transmission;
+    }
+
+    public Headlight getHeadlight() {
+        return headlight;
+    }
+
+    public void setDriving(boolean driving) {
+        this.driving = driving;
+    }
+
+    public boolean isDriving() {
         return driving;
     }
-    public abstract void changeTransmission(int gear);
-    public abstract boolean openWindow(int windowIndex);
-
 }
