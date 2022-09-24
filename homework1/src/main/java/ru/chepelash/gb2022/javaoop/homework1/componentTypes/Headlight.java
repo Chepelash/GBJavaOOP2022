@@ -8,12 +8,12 @@ public class Headlight {
         isOn = false;
     }
     public void turnOn(){
-        if(!isOn)
-            isOn = true;
+        isOn = true;
+        System.out.println("Headlight is on...");
     }
     public void turnOff(){
-        if(isOn)
-            isOn = false;
+        isOn = false;
+        System.out.println("Headlight is off...");
     }
     public boolean isOn(){
         return isOn;

@@ -15,16 +15,20 @@ public class Door {
     }
     public void openDoor(){
         isOpened = true;
+        System.out.println("Door is opened...");
     }
     public void closeDoor(){
         isOpened = false;
+        System.out.println("Door is closed...");
     }
     public void openWindow(){
         if(!window.isOpened())
             window.open();
+        System.out.println("Window is opened...");
     }
     public void closeWindow(){
         if(window.isOpened())
             window.close();
+        System.out.println("Window is closed...");
     }
 }
