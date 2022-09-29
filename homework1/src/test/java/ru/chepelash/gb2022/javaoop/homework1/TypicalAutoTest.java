@@ -37,5 +37,18 @@ class TypicalAutoTest {
         assertFalse(auto.isDriving());
         assertFalse(auto.isEngineStarted());
         assertFalse(auto.getHeadlight().isOn());
+        auto.openDoor(0);
+        assertTrue(auto.getDoors().get(0).isOpened());
+        auto.startDriving();
+        auto.startEngine();
+        assertTrue(auto.isEngineStarted());
+        auto.startDriving();
+        auto.getDoors().get(0).closeDoor();
+        auto.startDriving();
+        auto.changeTransmission(1);
+        auto.startEngine();
+        auto.stopEngine();
+        auto.stopDriving();
+        auto.stopEngine();
     }
 }
