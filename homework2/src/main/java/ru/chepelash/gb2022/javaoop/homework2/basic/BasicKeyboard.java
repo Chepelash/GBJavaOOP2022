@@ -1,4 +1,4 @@
-package basic;
+package ru.chepelash.gb2022.javaoop.homework2.basic;
 
 import ru.chepelash.gb2022.javaoop.homework2.abstractClasses.AbstractKeyboard;
 

@@ -1,4 +1,4 @@
-package enums;
+package ru.chepelash.gb2022.javaoop.homework2.enums;
 
 public enum WifiBandWidth {
     BAND_900MHz,

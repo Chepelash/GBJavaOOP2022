@@ -1,6 +1,6 @@
 package ru.chepelash.gb2022.javaoop.homework2.abstractClasses;
 
-import interfaces.Electric;
+import ru.chepelash.gb2022.javaoop.homework2.interfaces.Electric;
 
 public abstract class AbstractNotebook implements Electric {
     private final String model;

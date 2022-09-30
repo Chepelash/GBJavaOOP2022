@@ -1,6 +1,6 @@
-package basic;
+package ru.chepelash.gb2022.javaoop.homework2.basic;
 
-import enums.WifiBandWidth;
+import ru.chepelash.gb2022.javaoop.homework2.enums.WifiBandWidth;
 import ru.chepelash.gb2022.javaoop.homework2.abstractClasses.AbstractWifiModule;
 
 public class BasicWifiModule extends AbstractWifiModule {

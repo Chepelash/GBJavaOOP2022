@@ -1,8 +1,8 @@
 package ru.chepelash.gb2022.javaoop.homework2.abstractClasses;
 
-import enums.WifiBandWidth;
+import ru.chepelash.gb2022.javaoop.homework2.enums.WifiBandWidth;
 
-import static enums.WifiBandWidth.*;
+import static ru.chepelash.gb2022.javaoop.homework2.enums.WifiBandWidth.*;
 
 public abstract class AbstractWifiModule {
     private WifiBandWidth bandWidth;

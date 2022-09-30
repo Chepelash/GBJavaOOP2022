@@ -1,6 +1,6 @@
-package basic;
+package ru.chepelash.gb2022.javaoop.homework2.basic;
 
-import interfaces.Electric;
+import ru.chepelash.gb2022.javaoop.homework2.interfaces.Electric;
 import ru.chepelash.gb2022.javaoop.homework2.abstractClasses.AbstractCdRom;
 import ru.chepelash.gb2022.javaoop.homework2.abstractClasses.AbstractKeyboard;
 import ru.chepelash.gb2022.javaoop.homework2.abstractClasses.AbstractNotebook;
