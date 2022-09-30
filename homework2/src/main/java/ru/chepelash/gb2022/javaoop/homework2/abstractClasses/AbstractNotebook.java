@@ -1,6 +1,8 @@
 package ru.chepelash.gb2022.javaoop.homework2.abstractClasses;
 
-public abstract class AbstractNotebook {
+import interfaces.Electric;
+
+public abstract class AbstractNotebook implements Electric {
     private final String model;
     private final String vendor;
 
@@ -21,8 +23,6 @@ public abstract class AbstractNotebook {
         this.wifiModule = wifiModule;
         isWorking = false;
     }
-    public abstract void turnOn();
-    public abstract void turnOff();
     public boolean isWorking(){
         return isWorking;
     }

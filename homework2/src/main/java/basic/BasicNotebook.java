@@ -1,5 +1,6 @@
 package basic;
 
+import interfaces.Electric;
 import ru.chepelash.gb2022.javaoop.homework2.abstractClasses.AbstractCdRom;
 import ru.chepelash.gb2022.javaoop.homework2.abstractClasses.AbstractKeyboard;
 import ru.chepelash.gb2022.javaoop.homework2.abstractClasses.AbstractNotebook;
@@ -7,7 +8,7 @@ import ru.chepelash.gb2022.javaoop.homework2.abstractClasses.AbstractWifiModule;
 
 import java.util.NoSuchElementException;
 
-public class BasicNotebook extends AbstractNotebook {
+public class BasicNotebook extends AbstractNotebook implements Electric {
     public BasicNotebook(String model, String vendor, AbstractCdRom cdRom, AbstractKeyboard keyboard, AbstractWifiModule wifiModule) {
         super(model, vendor, cdRom, keyboard, wifiModule);
     }
