@@ -33,7 +33,7 @@ public class FileManager implements Manager {
     @Override
     public Set<String> getFileSet() throws IOException {
         Stream<Path> stream = Files.list(Paths.get(baseDir));
-        return stream.filter(Files::isDirectory)
+        return stream.filter(file -> !Files.isDirectory(file))
                 .map(Path::getFileName)
                 .map(Path::toString)
                 .collect(Collectors.toSet());
