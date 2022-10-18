@@ -41,6 +41,8 @@ public class FileServer implements Server {
                     running = false;
                 } else if (request.equalsIgnoreCase("getFileList")) {
                     response = manager.getFileSet().toString();
+                } else if (request.equalsIgnoreCase("getFileLinkList")) {
+                    response = manager.getFileLinkSet().toString();
                 } else if (manager.isFileExists(request)) {
                     response = manager.readFile(request);
                 } else {

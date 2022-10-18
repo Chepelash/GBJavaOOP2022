@@ -38,4 +38,8 @@ public class FileManager implements Manager {
                 .map(Path::toString)
                 .collect(Collectors.toSet());
     }
+    public Set<String> getFileLinkSet() throws IOException{
+        Set<String> fileSet = getFileSet();
+        return fileSet.stream().map(file -> baseDir + file).collect(Collectors.toSet());
+    }
 }

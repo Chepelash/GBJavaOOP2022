@@ -8,4 +8,5 @@ public interface Manager {
     String readFile(String fileName) throws IOException;
     boolean isFileExists(String fileName) throws IOException;
     Set<String> getFileSet() throws IOException;
+    Set<String> getFileLinkSet() throws IOException;
 }
