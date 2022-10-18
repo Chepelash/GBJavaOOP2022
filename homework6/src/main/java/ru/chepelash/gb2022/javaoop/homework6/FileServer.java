@@ -1,6 +1,5 @@
 package ru.chepelash.gb2022.javaoop.homework6;
 
-import ru.chepelash.gb2022.javaoop.homework6.interfaces.Manager;
 import ru.chepelash.gb2022.javaoop.homework6.interfaces.Server;
 
 import java.io.BufferedReader;
@@ -9,18 +8,18 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.file.Path;
 
 public class FileServer implements Server {
+    private final String dirName = "/home/virtboy/Documents/GBJavaOOP2022/homework6/src/test/resources/";
     private final int port;
-    private final Manager manager;
     private ServerSocket serverSocket;
 
-    public FileServer(int port, Manager manager) {
+    public FileServer(int port) {
         this.port = port;
-        this.manager = manager;
     }
-    public FileServer(Manager manager){
-        this(8000, manager);
+    public FileServer(){
+        this(8000);
     }
 
     private void handleRequest() throws IOException {
@@ -35,24 +34,18 @@ public class FileServer implements Server {
                     sb.append(reader.readLine());
                 }
                 String request = sb.toString().split(" ")[1].substring(1);
-                String response;
+                Path of = Path.of(dirName, request);
                 if (request.equalsIgnoreCase("quit")) {
-                    response = "Goodbye";
                     running = false;
-                } else if (request.equalsIgnoreCase("getFileList")) {
-                    response = manager.getFileSet().toString();
-                } else if (request.equalsIgnoreCase("getFileLinkList")) {
-                    response = manager.getFileLinkSet().toString();
-                } else if (manager.isFileExists(request)) {
-                    response = manager.readFile(request);
                 } else {
-                    response = "Unknown request";
+                    IOProcessors.PROCESSORS.forEach((pred, processor) ->{
+                        if(pred.test(of)){
+                            processor.accept(of, writer);
+                        }
+                    });
                 }
-                writer.println("HTTP/1.1 200 OK");
-                writer.println("Content-Type: text/html; charset=utf-8");
-                writer.println();
-                writer.println(response);
                 writer.flush();
+
             }
         }
     }
