@@ -1,3 +1,5 @@
+package ru.chepelash.gb2022.javaoop.homework6;
+
 import ru.chepelash.gb2022.javaoop.homework6.interfaces.Manager;
 
 import java.io.IOException;
